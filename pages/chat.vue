@@ -21,7 +21,7 @@
 <script>
 export default {
   mounted(){
-    this.chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/${this.$route.query.room}/`);
+    this.chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/${this.$route.query.room}`);
     const self = this;
     this.chatSocket.onmessage = function(e) {
         const data = JSON.parse(e.data);

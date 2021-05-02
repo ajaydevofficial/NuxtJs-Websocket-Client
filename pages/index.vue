@@ -1,5 +1,6 @@
 <template>
     <div class="container mt-4">
+        <navbar></navbar>
         <h3>Chat Room Provider</h3>
         <div class="chat-room-selector">
             <div class="alert alert-secondary">
@@ -13,7 +14,13 @@
 </template>
 
 <script>
+
+import navBar from '~/components/nav.vue';
+
 export default {
+    components: {
+        'navbar': navBar
+    },
     mounted(){
 
     },

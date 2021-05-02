@@ -1,5 +1,6 @@
 <template>
   <div class="container mt-4">
+    <navbar></navbar>
     <h3>Chat Room : {{this.$route.query.room}}</h3>
     <p v-if="error" class="small text-danger">{{error}}</p>
     <div class="chat-room-message-input">
@@ -19,7 +20,14 @@
 </template>
 
 <script>
+
+
+import navBar from '~/components/nav.vue';
+
 export default {
+  components: {
+      'navbar': navBar
+  },
   mounted(){
     this.chatSocket = new WebSocket(`ws://${window.location.host}/ws/chat/${this.$route.query.room}`);
     const self = this;
